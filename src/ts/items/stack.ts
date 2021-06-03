@@ -665,10 +665,6 @@ export class Stack extends ComponentParentableItem {
         if (this.element.style.display !== 'none') {
             const content: WidthAndHeight = getElementWidthAndHeight(this.element);
 
-            if (this._header.show) {
-                const dimension = this._header.leftRightSided ? WidthOrHeightPropertyName.width : WidthOrHeightPropertyName.height;
-                content[dimension] -= this.layoutManager.layoutConfig.dimensions.headerHeight;
-            }
             this._childElementContainer.style.width = numberToPixels(content.width);
             this._childElementContainer.style.height = numberToPixels(content.height);
             for (let i = 0; i < this.contentItems.length; i++) {
